@@ -84,7 +84,9 @@ impl Object {
         if self.fixed {
             f = format!("M: {:.0}", self.mass);
         } else {
-            f = format!("M: {:.3}\nVx: {:.3}\nVy: {}", self.mass, self.vel.x, self.vel.y);
+            f = format!("M: {:.3}", self.mass);
+            // Alternative format that displays the velocity.
+            // f = format!("M: {:.3}\nVx: {:.3}\nVy: {}", self.mass, self.vel.x, self.vel.y);
         }
         let s = f.as_str();
         d.draw_text(s, (self.pos.x+self.radius*0.9) as i32, (self.pos.y+self.radius*0.9) as i32, 14, Color::WHITE);
