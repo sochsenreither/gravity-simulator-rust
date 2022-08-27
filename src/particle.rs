@@ -1,7 +1,7 @@
 use raylib::math::Vector2;
 use raylib::prelude::*;
 
-use crate::{OFFSET, WIDTH};
+use crate::{OFFSET, WIDTH, HEIGHT};
 
 pub struct Object {
     pub pos: Vector2,
@@ -36,7 +36,7 @@ impl Object {
     /// Returns whether an object is offscreen (with added offset).
     pub fn is_offscreen(&mut self) -> bool {
         let x = self.pos.x > (WIDTH + OFFSET) as f32 || self.pos.x < (-OFFSET) as f32;
-        let y = self.pos.y > (WIDTH + OFFSET) as f32 || self.pos.y < (-OFFSET) as f32;
+        let y = self.pos.y > (HEIGHT + OFFSET) as f32 || self.pos.y < (-OFFSET) as f32;
         x || y
     }
 
